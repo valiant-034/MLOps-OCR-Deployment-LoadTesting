@@ -1,0 +1,1136 @@
+valiant@DESKTOP-K59O4T5:/mnt/h/Semester-6/MLOps/Final_Deployment&Load_testing$ ssh -i api_server.pem ec2-user@51.20.77.49
+The authenticity of host '51.20.77.49 (51.20.77.49)' can't be established.
+ED25519 key fingerprint is: SHA256:XW+7ubLWL7OjN19Av94xIdAlQ9d1oi2tfNrpr0sAzzE
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '51.20.77.49' (ED25519) to the list of known hosts.
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Permissions 0777 for 'api_server.pem' are too open.
+It is required that your private key files are NOT accessible by others.
+This private key will be ignored.
+Load key "api_server.pem": bad permissions
+ec2-user@51.20.77.49: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+valiant@DESKTOP-K59O4T5:/mnt/h/Semester-6/MLOps/Final_Deployment&Load_testing$ chmod 400 api_server.pem
+valiant@DESKTOP-K59O4T5:/mnt/h/Semester-6/MLOps/Final_Deployment&Load_testing$ ssh -i api_server.pem ec2-user@51.20.77.49
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Permissions 0555 for 'api_server.pem' are too open.
+It is required that your private key files are NOT accessible by others.
+This private key will be ignored.
+Load key "api_server.pem": bad permissions
+ec2-user@51.20.77.49: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+valiant@DESKTOP-K59O4T5:/mnt/h/Semester-6/MLOps/Final_Deployment&Load_testing$ cp /mnt/h/Semester-6/MLOps/Final_Deployment&Load_testing/api_server.pem ~/
+cd ~              
+chmod 400 api_server.pem
+ssh -i api_server.pem ec2-user@51.20.77.49
+[1] 83353
+bash: Load_testing/api_server.pem: No such file or directory
+chmod: cannot access 'api_server.pem': No such file or directory
+Warning: Identity file api_server.pem not accessible: No such file or directory.
+cp: missing destination file operand after '/mnt/h/Semester-6/MLOps/Final_Deployment'
+Try 'cp --help' for more information.
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+ec2-user@51.20.77.49: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+[1]+  Exit 1                     cp /mnt/h/Semester-6/MLOps/Final_Deployment  (wd: /mnt/h/Semester-6/MLOps/Final_Deployment&Load_testing)
+(wd now: ~)
+valiant@DESKTOP-K59O4T5:~$ cp "/mnt/h/Semester-6/MLOps/Final_Deployment&Load_testing/api_server.pem" ~/
+valiant@DESKTOP-K59O4T5:~$ chmod 400 api_server.pem
+valiant@DESKTOP-K59O4T5:~$ ssh -i api_server.pem ec2-user@51.20.77.49
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+[ec2-user@ip-172-31-28-215 ~]$ sudo yum update -y
+
+sudo yum install git -y
+sudo yum install python3-pip -y
+sudo yum install gcc -y
+sudo yum install gcc-c++ -y
+sudo yum install screen -y
+sudo yum install htop -y
+Amazon Linux 2023 Kernel Livepatch repository                                                                                                   314 kB/s |  38 kB     00:00    
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:01 ago on Sun May 24 11:09:52 2026.
+Dependencies resolved.
+================================================================================================================================================================================
+ Package                                     Architecture                      Version                                             Repository                              Size
+================================================================================================================================================================================
+Installing:
+ git                                         x86_64                            2.50.1-1.amzn2023.0.1                               amazonlinux                             53 k
+Installing dependencies:
+ git-core                                    x86_64                            2.50.1-1.amzn2023.0.1                               amazonlinux                            4.9 M
+ git-core-doc                                noarch                            2.50.1-1.amzn2023.0.1                               amazonlinux                            2.8 M
+ perl-Error                                  noarch                            1:0.17030-2.amzn2023.0.1                            amazonlinux                             42 k
+ perl-File-Find                              noarch                            1.37-477.amzn2023.0.8                               amazonlinux                             25 k
+ perl-Git                                    noarch                            2.50.1-1.amzn2023.0.1                               amazonlinux                             41 k
+ perl-TermReadKey                            x86_64                            2.38-9.amzn2023.0.2                                 amazonlinux                             36 k
+ perl-lib                                    x86_64                            0.65-477.amzn2023.0.8                               amazonlinux                             15 k
+
+Transaction Summary
+================================================================================================================================================================================
+Install  8 Packages
+
+Total download size: 7.9 M
+Installed size: 41 M
+Downloading Packages:
+(1/8): git-2.50.1-1.amzn2023.0.1.x86_64.rpm                                                                                                     1.5 MB/s |  53 kB     00:00    
+(2/8): git-core-doc-2.50.1-1.amzn2023.0.1.noarch.rpm                                                                                             46 MB/s | 2.8 MB     00:00    
+(3/8): perl-Error-0.17030-2.amzn2023.0.1.noarch.rpm                                                                                             1.4 MB/s |  42 kB     00:00    
+(4/8): git-core-2.50.1-1.amzn2023.0.1.x86_64.rpm                                                                                                 56 MB/s | 4.9 MB     00:00    
+(5/8): perl-Git-2.50.1-1.amzn2023.0.1.noarch.rpm                                                                                                1.6 MB/s |  41 kB     00:00    
+(6/8): perl-File-Find-1.37-477.amzn2023.0.8.noarch.rpm                                                                                          899 kB/s |  25 kB     00:00    
+(7/8): perl-lib-0.65-477.amzn2023.0.8.x86_64.rpm                                                                                                705 kB/s |  15 kB     00:00    
+(8/8): perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64.rpm                                                                                          1.4 MB/s |  36 kB     00:00    
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                            53 MB/s | 7.9 MB     00:00     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                                        1/1 
+  Installing       : git-core-2.50.1-1.amzn2023.0.1.x86_64                                                                                                                  1/8 
+  Installing       : git-core-doc-2.50.1-1.amzn2023.0.1.noarch                                                                                                              2/8 
+  Installing       : perl-lib-0.65-477.amzn2023.0.8.x86_64                                                                                                                  3/8 
+  Installing       : perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64                                                                                                            4/8 
+  Installing       : perl-File-Find-1.37-477.amzn2023.0.8.noarch                                                                                                            5/8 
+  Installing       : perl-Error-1:0.17030-2.amzn2023.0.1.noarch                                                                                                             6/8 
+  Installing       : perl-Git-2.50.1-1.amzn2023.0.1.noarch                                                                                                                  7/8 
+  Installing       : git-2.50.1-1.amzn2023.0.1.x86_64                                                                                                                       8/8 
+  Running scriptlet: git-2.50.1-1.amzn2023.0.1.x86_64                                                                                                                       8/8 
+  Verifying        : git-2.50.1-1.amzn2023.0.1.x86_64                                                                                                                       1/8 
+  Verifying        : git-core-2.50.1-1.amzn2023.0.1.x86_64                                                                                                                  2/8 
+  Verifying        : git-core-doc-2.50.1-1.amzn2023.0.1.noarch                                                                                                              3/8 
+  Verifying        : perl-Error-1:0.17030-2.amzn2023.0.1.noarch                                                                                                             4/8 
+  Verifying        : perl-File-Find-1.37-477.amzn2023.0.8.noarch                                                                                                            5/8 
+  Verifying        : perl-Git-2.50.1-1.amzn2023.0.1.noarch                                                                                                                  6/8 
+  Verifying        : perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64                                                                                                            7/8 
+  Verifying        : perl-lib-0.65-477.amzn2023.0.8.x86_64                                                                                                                  8/8 
+
+Installed:
+  git-2.50.1-1.amzn2023.0.1.x86_64             git-core-2.50.1-1.amzn2023.0.1.x86_64  git-core-doc-2.50.1-1.amzn2023.0.1.noarch    perl-Error-1:0.17030-2.amzn2023.0.1.noarch 
+  perl-File-Find-1.37-477.amzn2023.0.8.noarch  perl-Git-2.50.1-1.amzn2023.0.1.noarch  perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64  perl-lib-0.65-477.amzn2023.0.8.x86_64      
+
+Complete!
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------Uploaded folder to cloud------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------
+
+valiant@DESKTOP-K59O4T5:/mnt/h/Semester-6/MLOps/Final_Deployment&Load_testing$ scp -i ~/api_server.pem -r "/mnt/h/Semester-6/MLOps/Final_Deployment&Load_testing" ec2-user@51.20.77.49:~/
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+api_server.pem                                                                                                               100% 1678     9.1KB/s   00:00    
+app.py                                                                                                                       100% 1542     8.4KB/s   00:00    
+best.ckpt                                                                                                                    100%  449MB   1.7MB/s   04:17    
+inference.py                                                                                                                 100% 2503    13.5KB/s   00:00    
+logs.txt                                                                                                                     100%    0     0.0KB/s   00:00    
+mapping.json                                                                                                                 100%  504     2.9KB/s   00:00    
+model.py                                                                                                                     100% 8219    44.4KB/s   00:00    
+requirements.txt                                                                                                             100%   97     0.6KB/s   00:00    
+valiant@DESKTOP-K59O4T5:/mnt/h/Semester-6/MLOps/Final_Deployment&Load_testing$ 
+
+------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------requirements.txt installed------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+valiant@DESKTOP-K59O4T5:~$ chmod 400 api_server.pem
+valiant@DESKTOP-K59O4T5:~$ ssh -i api_server.pem ec2-user@51.20.77.49
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Sun May 24 11:09:06 2026 from 139.135.35.54
+[ec2-user@ip-172-31-28-215 ~]$ source venv/bin/activate
+-bash: venv/bin/activate: No such file or directory
+[ec2-user@ip-172-31-28-215 ~]$ cd Final_Deployment\&Load_testing/
+[ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ source venv/bin/activate
+-bash: venv/bin/activate: No such file or directory
+[ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ python3 -m venv venv
+[ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ source venv/bin/activate
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ pip install --upgrade pip
+Requirement already satisfied: pip in ./venv/lib/python3.9/site-packages (21.3.1)
+Collecting pip
+  Downloading pip-26.0.1-py3-none-any.whl (1.8 MB)
+     |████████████████████████████████| 1.8 MB 14.4 MB/s            
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 21.3.1
+    Uninstalling pip-21.3.1:
+      Successfully uninstalled pip-21.3.1
+Successfully installed pip-26.0.1
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ pip install -r requirements.txt
+Collecting fastapi (from -r requirements.txt (line 1))
+  Downloading fastapi-0.128.8-py3-none-any.whl.metadata (30 kB)
+Collecting uvicorn (from -r requirements.txt (line 2))
+  Downloading uvicorn-0.39.0-py3-none-any.whl.metadata (6.8 kB)
+Collecting python-multipart (from -r requirements.txt (line 3))
+  Downloading python_multipart-0.0.20-py3-none-any.whl.metadata (1.8 kB)
+Collecting torch (from -r requirements.txt (line 5))
+  Downloading torch-2.8.0-cp39-cp39-manylinux_2_28_x86_64.whl.metadata (30 kB)
+Collecting torchvision (from -r requirements.txt (line 6))
+  Downloading torchvision-0.23.0-cp39-cp39-manylinux_2_28_x86_64.whl.metadata (6.1 kB)
+Collecting opencv-python-headless (from -r requirements.txt (line 8))
+  Downloading opencv_python_headless-4.13.0.92-cp37-abi3-manylinux_2_28_x86_64.whl.metadata (19 kB)
+Collecting numpy (from -r requirements.txt (line 9))
+  Downloading numpy-2.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (60 kB)
+Collecting pillow (from -r requirements.txt (line 10))
+  Downloading pillow-11.3.0-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.0 kB)
+Collecting starlette<1.0.0,>=0.40.0 (from fastapi->-r requirements.txt (line 1))
+  Downloading starlette-0.49.3-py3-none-any.whl.metadata (6.4 kB)
+Collecting pydantic>=2.7.0 (from fastapi->-r requirements.txt (line 1))
+  Downloading pydantic-2.13.4-py3-none-any.whl.metadata (109 kB)
+Collecting typing-extensions>=4.8.0 (from fastapi->-r requirements.txt (line 1))
+  Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting typing-inspection>=0.4.2 (from fastapi->-r requirements.txt (line 1))
+  Downloading typing_inspection-0.4.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting annotated-doc>=0.0.2 (from fastapi->-r requirements.txt (line 1))
+  Downloading annotated_doc-0.0.4-py3-none-any.whl.metadata (6.6 kB)
+Collecting anyio<5,>=3.6.2 (from starlette<1.0.0,>=0.40.0->fastapi->-r requirements.txt (line 1))
+  Downloading anyio-4.12.1-py3-none-any.whl.metadata (4.3 kB)
+Collecting exceptiongroup>=1.0.2 (from anyio<5,>=3.6.2->starlette<1.0.0,>=0.40.0->fastapi->-r requirements.txt (line 1))
+  Downloading exceptiongroup-1.3.1-py3-none-any.whl.metadata (6.7 kB)
+Collecting idna>=2.8 (from anyio<5,>=3.6.2->starlette<1.0.0,>=0.40.0->fastapi->-r requirements.txt (line 1))
+  Downloading idna-3.16-py3-none-any.whl.metadata (6.4 kB)
+Collecting click>=7.0 (from uvicorn->-r requirements.txt (line 2))
+  Downloading click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+Collecting h11>=0.8 (from uvicorn->-r requirements.txt (line 2))
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting filelock (from torch->-r requirements.txt (line 5))
+  Downloading filelock-3.19.1-py3-none-any.whl.metadata (2.1 kB)
+Collecting sympy>=1.13.3 (from torch->-r requirements.txt (line 5))
+  Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx (from torch->-r requirements.txt (line 5))
+  Downloading networkx-3.2.1-py3-none-any.whl.metadata (5.2 kB)
+Collecting jinja2 (from torch->-r requirements.txt (line 5))
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting fsspec (from torch->-r requirements.txt (line 5))
+  Downloading fsspec-2025.10.0-py3-none-any.whl.metadata (10 kB)
+Collecting nvidia-cuda-nvrtc-cu12==12.8.93 (from torch->-r requirements.txt (line 5))
+  Downloading nvidia_cuda_nvrtc_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-runtime-cu12==12.8.90 (from torch->-r requirements.txt (line 5))
+  Downloading nvidia_cuda_runtime_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-cupti-cu12==12.8.90 (from torch->-r requirements.txt (line 5))
+  Downloading nvidia_cuda_cupti_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cudnn-cu12==9.10.2.21 (from torch->-r requirements.txt (line 5))
+  Downloading nvidia_cudnn_cu12-9.10.2.21-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cublas-cu12==12.8.4.1 (from torch->-r requirements.txt (line 5))
+  Downloading nvidia_cublas_cu12-12.8.4.1-py3-none-manylinux_2_27_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cufft-cu12==11.3.3.83 (from torch->-r requirements.txt (line 5))
+  Downloading nvidia_cufft_cu12-11.3.3.83-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-curand-cu12==10.3.9.90 (from torch->-r requirements.txt (line 5))
+  Downloading nvidia_curand_cu12-10.3.9.90-py3-none-manylinux_2_27_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cusolver-cu12==11.7.3.90 (from torch->-r requirements.txt (line 5))
+  Downloading nvidia_cusolver_cu12-11.7.3.90-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cusparse-cu12==12.5.8.93 (from torch->-r requirements.txt (line 5))
+  Downloading nvidia_cusparse_cu12-12.5.8.93-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cusparselt-cu12==0.7.1 (from torch->-r requirements.txt (line 5))
+  Downloading nvidia_cusparselt_cu12-0.7.1-py3-none-manylinux2014_x86_64.whl.metadata (7.0 kB)
+Collecting nvidia-nccl-cu12==2.27.3 (from torch->-r requirements.txt (line 5))
+  Downloading nvidia_nccl_cu12-2.27.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.0 kB)
+Collecting nvidia-nvtx-cu12==12.8.90 (from torch->-r requirements.txt (line 5))
+  Downloading nvidia_nvtx_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-nvjitlink-cu12==12.8.93 (from torch->-r requirements.txt (line 5))
+  Downloading nvidia_nvjitlink_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cufile-cu12==1.13.1.3 (from torch->-r requirements.txt (line 5))
+  Downloading nvidia_cufile_cu12-1.13.1.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting triton==3.4.0 (from torch->-r requirements.txt (line 5))
+  Downloading triton-3.4.0-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (1.7 kB)
+Requirement already satisfied: setuptools>=40.8.0 in ./venv/lib/python3.9/site-packages (from triton==3.4.0->torch->-r requirements.txt (line 5)) (59.6.0)
+Collecting importlib-metadata (from triton==3.4.0->torch->-r requirements.txt (line 5))
+  Downloading importlib_metadata-8.7.1-py3-none-any.whl.metadata (4.7 kB)
+Collecting annotated-types>=0.6.0 (from pydantic>=2.7.0->fastapi->-r requirements.txt (line 1))
+  Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.46.4 (from pydantic>=2.7.0->fastapi->-r requirements.txt (line 1))
+  Downloading pydantic_core-2.46.4-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch->-r requirements.txt (line 5))
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting zipp>=3.20 (from importlib-metadata->triton==3.4.0->torch->-r requirements.txt (line 5))
+  Downloading zipp-3.23.1-py3-none-any.whl.metadata (3.6 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->torch->-r requirements.txt (line 5))
+  Downloading markupsafe-3.0.3-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Downloading fastapi-0.128.8-py3-none-any.whl (103 kB)
+Downloading starlette-0.49.3-py3-none-any.whl (74 kB)
+Downloading anyio-4.12.1-py3-none-any.whl (113 kB)
+Downloading uvicorn-0.39.0-py3-none-any.whl (68 kB)
+Downloading python_multipart-0.0.20-py3-none-any.whl (24 kB)
+Downloading torch-2.8.0-cp39-cp39-manylinux_2_28_x86_64.whl (888.0 MB)
+   ━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.7/888.0 MB 154.8 MB/s eta 0:00:06
+ERROR: Exception:
+Traceback (most recent call last):
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/pip/_vendor/urllib3/response.py", line 438, in _error_catcher
+    yield
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/pip/_vendor/urllib3/response.py", line 561, in read
+    data = self._fp_read(amt) if not fp_closed else b""
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/pip/_vendor/urllib3/response.py", line 527, in _fp_read
+    return self._fp.read(amt) if amt is not None else self._fp.read()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/pip/_vendor/cachecontrol/filewrapper.py", line 104, in read
+    self.__buf.write(data)
+  File "/usr/lib64/python3.9/tempfile.py", line 494, in func_wrapper
+    return func(*args, **kwargs)
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/pip/_internal/cli/base_command.py", line 107, in _run_wrapper
+    status = _inner_run()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/pip/_internal/cli/base_command.py", line 98, in _inner_run
+    return self.run(options, args)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/pip/_internal/cli/req_command.py", line 96, in wrapper
+    return func(self, options, args)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/pip/_internal/commands/install.py", line 419, in run
+    preparer.prepare_linked_requirements_more(
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/pip/_internal/operations/prepare.py", line 569, in prepare_linked_requirements_more
+    self._complete_partial_requirements(
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/pip/_internal/operations/prepare.py", line 478, in _complete_partial_requirements
+    for link, (filepath, _) in batch_download:
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/pip/_internal/network/download.py", line 183, in batch
+    filepath, content_type = self(link, location)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/pip/_internal/network/download.py", line 194, in __call__
+    self._process_response(download, resp)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/pip/_internal/network/download.py", line 211, in _process_response
+    for chunk in chunks:
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/pip/_internal/cli/progress_bars.py", line 69, in _rich_download_progress_bar
+    for chunk in iterable:
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/pip/_internal/network/utils.py", line 65, in response_chunks
+    for chunk in response.raw.stream(
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/pip/_vendor/urllib3/response.py", line 622, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/pip/_vendor/urllib3/response.py", line 587, in read
+    raise IncompleteRead(self._fp_bytes_read, self.length_remaining)
+  File "/usr/lib64/python3.9/contextlib.py", line 137, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/pip/_vendor/urllib3/response.py", line 455, in _error_catcher
+    raise ProtocolError("Connection broken: %r" % e, e)
+pip._vendor.urllib3.exceptions.ProtocolError: ("Connection broken: OSError(28, 'No space left on device')", OSError(28, 'No space left on device'))
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ ^C
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ df -h
+Filesystem        Size  Used Avail Use% Mounted on
+devtmpfs          4.0M     0  4.0M   0% /dev
+tmpfs             957M     0  957M   0% /dev/shm
+tmpfs             383M  440K  383M   1% /run
+/dev/nvme0n1p1     30G  2.6G   28G   9% /
+tmpfs             957M  833M  125M  87% /tmp
+/dev/nvme0n1p128   10M  1.3M  8.7M  13% /boot/efi
+tmpfs             192M     0  192M   0% /run/user/1000
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ rm -rf ~/.cache/pip
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ rm -rf venv
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ deactivate venv
+[ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ rm -rf venv
+[ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ python3 -m venv venv
+source venv/bin/activate
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ nano requirements.txt 
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ pip install -r requirements.txt
+Collecting fastapi
+  Downloading fastapi-0.128.8-py3-none-any.whl (103 kB)
+     |████████████████████████████████| 103 kB 14.7 MB/s            
+Collecting uvicorn
+  Downloading uvicorn-0.39.0-py3-none-any.whl (68 kB)
+     |████████████████████████████████| 68 kB 9.3 MB/s             
+Collecting python-multipart
+  Downloading python_multipart-0.0.20-py3-none-any.whl (24 kB)
+Collecting opencv-python-headless
+  Downloading opencv_python_headless-4.13.0.92-cp37-abi3-manylinux_2_28_x86_64.whl (60.4 MB)
+     |████████████████████████████████| 60.4 MB 84.1 MB/s            
+Collecting numpy
+  Downloading numpy-2.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (19.5 MB)
+     |████████████████████████████████| 19.5 MB 75.3 MB/s            
+Collecting pillow
+  Downloading pillow-11.3.0-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.6 MB)
+     |████████████████████████████████| 6.6 MB 78.7 MB/s            
+Collecting typing-extensions>=4.8.0
+  Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+     |████████████████████████████████| 44 kB 5.6 MB/s             
+Collecting annotated-doc>=0.0.2
+  Downloading annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
+Collecting starlette<1.0.0,>=0.40.0
+  Downloading starlette-0.49.3-py3-none-any.whl (74 kB)
+     |████████████████████████████████| 74 kB 6.1 MB/s             
+Collecting pydantic>=2.7.0
+  Downloading pydantic-2.13.4-py3-none-any.whl (472 kB)
+     |████████████████████████████████| 472 kB 82.4 MB/s            
+Collecting typing-inspection>=0.4.2
+  Downloading typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+Collecting h11>=0.8
+  Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Collecting click>=7.0
+  Downloading click-8.1.8-py3-none-any.whl (98 kB)
+     |████████████████████████████████| 98 kB 13.9 MB/s            
+Collecting pydantic-core==2.46.4
+  Downloading pydantic_core-2.46.4-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+     |████████████████████████████████| 2.1 MB 76.7 MB/s            
+Collecting annotated-types>=0.6.0
+  Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Collecting anyio<5,>=3.6.2
+  Downloading anyio-4.12.1-py3-none-any.whl (113 kB)
+     |████████████████████████████████| 113 kB 95.3 MB/s            
+Collecting idna>=2.8
+  Downloading idna-3.16-py3-none-any.whl (74 kB)
+     |████████████████████████████████| 74 kB 5.0 MB/s             
+Collecting exceptiongroup>=1.0.2
+  Downloading exceptiongroup-1.3.1-py3-none-any.whl (16 kB)
+Installing collected packages: typing-extensions, idna, exceptiongroup, typing-inspection, pydantic-core, anyio, annotated-types, starlette, pydantic, numpy, h11, click, annotated-doc, uvicorn, python-multipart, pillow, opencv-python-headless, fastapi
+Successfully installed annotated-doc-0.0.4 annotated-types-0.7.0 anyio-4.12.1 click-8.1.8 exceptiongroup-1.3.1 fastapi-0.128.8 h11-0.16.0 idna-3.16 numpy-2.0.2 opencv-python-headless-4.13.0.92 pillow-11.3.0 pydantic-2.13.4 pydantic-core-2.46.4 python-multipart-0.0.20 starlette-0.49.3 typing-extensions-4.15.0 typing-inspection-0.4.2 uvicorn-0.39.0
+WARNING: You are using pip version 21.3.1; however, version 26.0.1 is available.
+You should consider upgrading via the '/home/ec2-user/Final_Deployment&Load_testing/venv/bin/python3 -m pip install --upgrade pip' command.
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+Looking in indexes: https://download.pytorch.org/whl/cpu
+Collecting torch
+  Downloading https://download-r2.pytorch.org/whl/cpu/torch-2.8.0%2Bcpu-cp39-cp39-manylinux_2_28_x86_64.whl (184.0 MB)
+     |██████████████████████▊         | 130.5 MB 102.7 MB/s eta 0:00:01ERROR: Could not install packages due to an OSError: [Errno 28] No space left on device
+
+WARNING: You are using pip version 21.3.1; however, version 26.0.1 is available.
+You should consider upgrading via the '/home/ec2-user/Final_Deployment&Load_testing/venv/bin/python3 -m pip install --upgrade pip' command.
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ du -sh * | sort -h
+0       logs.txt
+4.0K    api_server.pem
+4.0K    app.py
+4.0K    inference.py
+4.0K    mapping.json
+4.0K    requirements.txt
+12K     model.py
+283M    venv
+449M    best.ckpt
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ du -sh ~/* | sort -h
+732M    /home/ec2-user/Final_Deployment&Load_testing
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+Looking in indexes: https://download.pytorch.org/whl/cpu
+Collecting torch
+  Downloading https://download-r2.pytorch.org/whl/cpu/torch-2.8.0%2Bcpu-cp39-cp39-manylinux_2_28_x86_64.whl (184.0 MB)
+     |██████████████████████▊         | 130.5 MB 117.6 MB/s eta 0:00:01ERROR: Could not install packages due to an OSError: [Errno 28] No space left on device
+
+WARNING: You are using pip version 21.3.1; however, version 26.0.1 is available.
+You should consider upgrading via the '/home/ec2-user/Final_Deployment&Load_testing/venv/bin/python3 -m pip install --upgrade pip' command.
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ -m pip install --upgrade pip
+-bash: -m: command not found
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ pip install --upgrade pip
+Requirement already satisfied: pip in ./venv/lib/python3.9/site-packages (21.3.1)
+Collecting pip
+  Downloading pip-26.0.1-py3-none-any.whl (1.8 MB)
+     |████████████████████████████████| 1.8 MB 14.0 MB/s            
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 21.3.1
+    Uninstalling pip-21.3.1:
+      Successfully uninstalled pip-21.3.1
+Successfully installed pip-26.0.1
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+Looking in indexes: https://download.pytorch.org/whl/cpu
+Collecting torch
+  Downloading https://download-r2.pytorch.org/whl/cpu/torch-2.8.0%2Bcpu-cp39-cp39-manylinux_2_28_x86_64.whl.metadata (29 kB)
+Collecting torchvision
+  Downloading https://download-r2.pytorch.org/whl/cpu/torchvision-0.23.0%2Bcpu-cp39-cp39-manylinux_2_28_x86_64.whl.metadata (6.1 kB)
+Collecting filelock (from torch)
+  Downloading filelock-3.19.1-py3-none-any.whl.metadata (2.1 kB)
+Requirement already satisfied: typing-extensions>=4.10.0 in ./venv/lib/python3.9/site-packages (from torch) (4.15.0)
+Collecting sympy>=1.13.3 (from torch)
+  Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx (from torch)
+  Downloading networkx-3.2.1-py3-none-any.whl.metadata (5.2 kB)
+Collecting jinja2 (from torch)
+  Downloading https://download.pytorch.org/whl/jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting fsspec (from torch)
+  Downloading fsspec-2025.10.0-py3-none-any.whl.metadata (10 kB)
+Requirement already satisfied: numpy in ./venv/lib/python3.9/site-packages (from torchvision) (2.0.2)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in ./venv/lib/python3.9/site-packages (from torchvision) (11.3.0)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch)
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->torch)
+  Downloading https://download.pytorch.org/whl/MarkupSafe-3.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+Downloading https://download-r2.pytorch.org/whl/cpu/torch-2.8.0%2Bcpu-cp39-cp39-manylinux_2_28_x86_64.whl (184.0 MB)
+   ━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.7/184.0 MB 227.5 MB/s eta 0:00:01ERROR: Could not install packages due to an OSError: [Errno 28] No space left on device
+
+   ━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━ 65.0/184.0 MB 237.2 MB/s eta 0:00:01
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ df -h
+Filesystem        Size  Used Avail Use% Mounted on
+devtmpfs          4.0M     0  4.0M   0% /dev
+tmpfs             957M     0  957M   0% /dev/shm
+tmpfs             383M  440K  383M   1% /run
+/dev/nvme0n1p1     30G  2.9G   28G  10% /
+tmpfs             957M  833M  125M  87% /tmp
+/dev/nvme0n1p128   10M  1.3M  8.7M  13% /boot/efi
+tmpfs             192M     0  192M   0% /run/user/1000
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ rm -rf /tmp/*
+rm -rf ~/.cache/pip
+rm: cannot remove '/tmp/systemd-private-20ec31cd21d14fdfbc1e3f3cf912c49b-chronyd.service-Nv8lx1': Operation not permitted
+rm: cannot remove '/tmp/systemd-private-20ec31cd21d14fdfbc1e3f3cf912c49b-dbus-broker.service-gG1iYB': Operation not permitted
+rm: cannot remove '/tmp/systemd-private-20ec31cd21d14fdfbc1e3f3cf912c49b-policy-routes@ens5.service-FOMh69': Operation not permitted
+rm: cannot remove '/tmp/systemd-private-20ec31cd21d14fdfbc1e3f3cf912c49b-systemd-logind.service-ep4GJ3': Operation not permitted
+rm: cannot remove '/tmp/systemd-private-20ec31cd21d14fdfbc1e3f3cf912c49b-systemd-resolved.service-quaUs7': Operation not permitted
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ mkdir -p ~/tmp
+export TMPDIR=~/tmp
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+Looking in indexes: https://download.pytorch.org/whl/cpu
+Collecting torch
+  Downloading https://download-r2.pytorch.org/whl/cpu/torch-2.8.0%2Bcpu-cp39-cp39-manylinux_2_28_x86_64.whl.metadata (29 kB)
+Collecting torchvision
+  Downloading https://download-r2.pytorch.org/whl/cpu/torchvision-0.23.0%2Bcpu-cp39-cp39-manylinux_2_28_x86_64.whl.metadata (6.1 kB)
+Collecting filelock (from torch)
+  Downloading filelock-3.19.1-py3-none-any.whl.metadata (2.1 kB)
+Requirement already satisfied: typing-extensions>=4.10.0 in ./venv/lib/python3.9/site-packages (from torch) (4.15.0)
+Collecting sympy>=1.13.3 (from torch)
+  Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx (from torch)
+  Downloading networkx-3.2.1-py3-none-any.whl.metadata (5.2 kB)
+Collecting jinja2 (from torch)
+  Downloading https://download.pytorch.org/whl/jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting fsspec (from torch)
+  Downloading fsspec-2025.10.0-py3-none-any.whl.metadata (10 kB)
+Requirement already satisfied: numpy in ./venv/lib/python3.9/site-packages (from torchvision) (2.0.2)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in ./venv/lib/python3.9/site-packages (from torchvision) (11.3.0)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch)
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->torch)
+  Downloading https://download.pytorch.org/whl/MarkupSafe-3.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+Downloading https://download-r2.pytorch.org/whl/cpu/torch-2.8.0%2Bcpu-cp39-cp39-manylinux_2_28_x86_64.whl (184.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 184.0/184.0 MB 64.4 MB/s  0:00:02
+Downloading https://download-r2.pytorch.org/whl/cpu/torchvision-0.23.0%2Bcpu-cp39-cp39-manylinux_2_28_x86_64.whl (1.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 124.8 MB/s  0:00:00
+Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 181.4 MB/s  0:00:00
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 49.2 MB/s  0:00:00
+Downloading filelock-3.19.1-py3-none-any.whl (15 kB)
+Downloading fsspec-2025.10.0-py3-none-any.whl (200 kB)
+Downloading https://download.pytorch.org/whl/jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading https://download.pytorch.org/whl/MarkupSafe-3.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20 kB)
+Downloading networkx-3.2.1-py3-none-any.whl (1.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 119.4 MB/s  0:00:00
+Installing collected packages: mpmath, sympy, networkx, MarkupSafe, fsspec, filelock, jinja2, torch, torchvision
+Successfully installed MarkupSafe-3.0.2 filelock-3.19.1 fsspec-2025.10.0 jinja2-3.1.6 mpmath-1.3.0 networkx-3.2.1 sympy-1.14.0 torch-2.8.0+cpu torchvision-0.23.0+cpu
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ pip install -r requirements.txt
+Requirement already satisfied: fastapi in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 1)) (0.128.8)
+Requirement already satisfied: uvicorn in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 2)) (0.39.0)
+Requirement already satisfied: python-multipart in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 3)) (0.0.20)
+Requirement already satisfied: opencv-python-headless in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 5)) (4.13.0.92)
+Requirement already satisfied: numpy in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 6)) (2.0.2)
+Requirement already satisfied: pillow in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 7)) (11.3.0)
+Requirement already satisfied: starlette<1.0.0,>=0.40.0 in ./venv/lib/python3.9/site-packages (from fastapi->-r requirements.txt (line 1)) (0.49.3)
+Requirement already satisfied: pydantic>=2.7.0 in ./venv/lib/python3.9/site-packages (from fastapi->-r requirements.txt (line 1)) (2.13.4)
+Requirement already satisfied: typing-extensions>=4.8.0 in ./venv/lib/python3.9/site-packages (from fastapi->-r requirements.txt (line 1)) (4.15.0)
+Requirement already satisfied: typing-inspection>=0.4.2 in ./venv/lib/python3.9/site-packages (from fastapi->-r requirements.txt (line 1)) (0.4.2)
+Requirement already satisfied: annotated-doc>=0.0.2 in ./venv/lib/python3.9/site-packages (from fastapi->-r requirements.txt (line 1)) (0.0.4)
+Requirement already satisfied: anyio<5,>=3.6.2 in ./venv/lib/python3.9/site-packages (from starlette<1.0.0,>=0.40.0->fastapi->-r requirements.txt (line 1)) (4.12.1)
+Requirement already satisfied: exceptiongroup>=1.0.2 in ./venv/lib/python3.9/site-packages (from anyio<5,>=3.6.2->starlette<1.0.0,>=0.40.0->fastapi->-r requirements.txt (line 1)) (1.3.1)
+Requirement already satisfied: idna>=2.8 in ./venv/lib/python3.9/site-packages (from anyio<5,>=3.6.2->starlette<1.0.0,>=0.40.0->fastapi->-r requirements.txt (line 1)) (3.16)
+Requirement already satisfied: click>=7.0 in ./venv/lib/python3.9/site-packages (from uvicorn->-r requirements.txt (line 2)) (8.1.8)
+Requirement already satisfied: h11>=0.8 in ./venv/lib/python3.9/site-packages (from uvicorn->-r requirements.txt (line 2)) (0.16.0)
+Requirement already satisfied: annotated-types>=0.6.0 in ./venv/lib/python3.9/site-packages (from pydantic>=2.7.0->fastapi->-r requirements.txt (line 1)) (0.7.0)
+Requirement already satisfied: pydantic-core==2.46.4 in ./venv/lib/python3.9/site-packages (from pydantic>=2.7.0->fastapi->-r requirements.txt (line 1)) (2.46.4)
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------- Run The Server For Inference --------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ python
+Python 3.9.25 (main, Apr 17 2026, 00:00:00) 
+[GCC 11.5.0 20240719 (Red Hat 11.5.0-5)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+KeyboardInterrupt
+>>> import torch
+>>> import cv2
+>>> import fastapi
+>>> import torch
+>>> exit()
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ python -m uvicorn app:app --host 0.0.0.0 --port 8000
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib64/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/main.py", line 423, in main
+    run(
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/main.py", line 593, in run
+    server.run()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+  File "/usr/lib64/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/ec2-user/Final_Deployment&Load_testing/app.py", line 5, in <module>
+    from inference import predict_paragraph
+  File "/home/ec2-user/Final_Deployment&Load_testing/inference.py", line 53, in <module>
+    checkpoint = torch.load(
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/torch/serialization.py", line 1529, in load
+    raise pickle.UnpicklingError(_get_wo_message(str(e))) from None
+_pickle.UnpicklingError: Weights only load failed. This file can still be loaded, to do so you have two options, do those steps only if you trust the source of the checkpoint. 
+        (1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+        (2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+        WeightsUnpickler error: Unsupported global: GLOBAL argparse.Namespace was not an allowed global by default. Please use `torch.serialization.add_safe_globals([argparse.Namespace])` or the `torch.serialization.safe_globals([argparse.Namespace])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ nano inference.py 
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ python -m uvicorn app:app --host 0.0.0.0 --port 8000
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib64/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/main.py", line 423, in main
+    run(
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/main.py", line 593, in run
+    server.run()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+  File "/usr/lib64/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/ec2-user/Final_Deployment&Load_testing/app.py", line 5, in <module>
+    from inference import predict_paragraph
+  File "/home/ec2-user/Final_Deployment&Load_testing/inference.py", line 71, in <module>
+    model.load_state_dict(
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 2624, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for ResnetTransformer:
+        Missing key(s) in state_dict: "transformer_decoder.layers.4.self_attn.in_proj_weight", "transformer_decoder.layers.4.self_attn.in_proj_bias", "transformer_decoder.layers.4.self_attn.out_proj.weight", "transformer_decoder.layers.4.self_attn.out_proj.bias", "transformer_decoder.layers.4.multihead_attn.in_proj_weight", "transformer_decoder.layers.4.multihead_attn.in_proj_bias", "transformer_decoder.layers.4.multihead_attn.out_proj.weight", "transformer_decoder.layers.4.multihead_attn.out_proj.bias", "transformer_decoder.layers.4.linear1.weight", "transformer_decoder.layers.4.linear1.bias", "transformer_decoder.layers.4.linear2.weight", "transformer_decoder.layers.4.linear2.bias", "transformer_decoder.layers.4.norm1.weight", "transformer_decoder.layers.4.norm1.bias", "transformer_decoder.layers.4.norm2.weight", "transformer_decoder.layers.4.norm2.bias", "transformer_decoder.layers.4.norm3.weight", "transformer_decoder.layers.4.norm3.bias", "transformer_decoder.layers.5.self_attn.in_proj_weight", "transformer_decoder.layers.5.self_attn.in_proj_bias", "transformer_decoder.layers.5.self_attn.out_proj.weight", "transformer_decoder.layers.5.self_attn.out_proj.bias", "transformer_decoder.layers.5.multihead_attn.in_proj_weight", "transformer_decoder.layers.5.multihead_attn.in_proj_bias", "transformer_decoder.layers.5.multihead_attn.out_proj.weight", "transformer_decoder.layers.5.multihead_attn.out_proj.bias", "transformer_decoder.layers.5.linear1.weight", "transformer_decoder.layers.5.linear1.bias", "transformer_decoder.layers.5.linear2.weight", "transformer_decoder.layers.5.linear2.bias", "transformer_decoder.layers.5.norm1.weight", "transformer_decoder.layers.5.norm1.bias", "transformer_decoder.layers.5.norm2.weight", "transformer_decoder.layers.5.norm2.bias", "transformer_decoder.layers.5.norm3.weight", "transformer_decoder.layers.5.norm3.bias". 
+        size mismatch for dec_pos_encoder.pe: copying a param with shape torch.Size([200, 1, 512]) from checkpoint, the shape in current model is torch.Size([256, 1, 512]).
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ nano model.py 
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ python -m uvicorn app:app --host 0.0.0.0 --port 8000
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib64/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/main.py", line 423, in main
+    run(
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/main.py", line 593, in run
+    server.run()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+  File "/usr/lib64/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/ec2-user/Final_Deployment&Load_testing/app.py", line 5, in <module>
+    from inference import predict_paragraph
+  File "/home/ec2-user/Final_Deployment&Load_testing/inference.py", line 71, in <module>
+    model.load_state_dict(
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 2624, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for ResnetTransformer:
+        size mismatch for dec_pos_encoder.pe: copying a param with shape torch.Size([200, 1, 512]) from checkpoint, the shape in current model is torch.Size([256, 1, 512]).
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ nano model.py 
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ python
+Python 3.9.25 (main, Apr 17 2026, 00:00:00) 
+[GCC 11.5.0 20240719 (Red Hat 11.5.0-5)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import torch
+>>> 
+>>> ckpt = torch.load(
+...     "best.ckpt",
+...     map_location="cpu",
+...     weights_only=False,
+... )
+>>> 
+>>> print(ckpt.keys())
+dict_keys(['epoch', 'global_step', 'pytorch-lightning_version', 'state_dict', 'loops', 'callbacks', 'optimizer_states', 'lr_schedulers', 'MixedPrecisionPlugin', 'hparams_name', 'hyper_parameters'])
+>>> 
+>>> print(ckpt["hyper_parameters"])
+{'args': Namespace(augment_data='true', tf_dim=512, batch_size=16, num_workers=4, lr=0.0001, max_epochs=60, accelerator='gpu', devices=1, wandb=True)}
+>>> exit()
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ nano model.py 
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ python -m uvicorn app:app --host 0.0.0.0 --port 8000
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib64/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/main.py", line 423, in main
+    run(
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/main.py", line 593, in run
+    server.run()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+  File "/usr/lib64/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/ec2-user/Final_Deployment&Load_testing/app.py", line 5, in <module>
+    from inference import predict_paragraph
+  File "/home/ec2-user/Final_Deployment&Load_testing/inference.py", line 71, in <module>
+    model.load_state_dict(
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 2624, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for ResnetTransformer:
+        size mismatch for dec_pos_encoder.pe: copying a param with shape torch.Size([200, 1, 512]) from checkpoint, the shape in current model is torch.Size([256, 1, 512]).
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ nano model.py 
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ python -m uvicorn app:app --host 0.0.0.0 --port 8000
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib64/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/main.py", line 423, in main
+    run(
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/main.py", line 593, in run
+    server.run()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+  File "/usr/lib64/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/ec2-user/Final_Deployment&Load_testing/app.py", line 5, in <module>
+    from inference import predict_paragraph
+  File "/home/ec2-user/Final_Deployment&Load_testing/inference.py", line 71, in <module>
+    model.load_state_dict(
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 2624, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for ResnetTransformer:
+        size mismatch for dec_pos_encoder.pe: copying a param with shape torch.Size([200, 1, 512]) from checkpoint, the shape in current model is torch.Size([256, 1, 512]).
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ nano model.py 
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ python -m uvicorn app:app --host 0.0.0.0 --port 8000
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib64/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/main.py", line 423, in main
+    run(
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/main.py", line 593, in run
+    server.run()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+  File "/usr/lib64/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/ec2-user/Final_Deployment&Load_testing/app.py", line 5, in <module>
+    from inference import predict_paragraph
+ImportError: cannot import name 'predict_paragraph' from 'inference' (/home/ec2-user/Final_Deployment&Load_testing/inference.py)
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ nono inference.py 
+-bash: nono: command not found
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ nano inference.py 
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ nano app.py 
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ python -m uvicorn app:app --host 0.0.0.0 --port 8000
+INFO:     Started server process [29269]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     139.135.35.54:17042 - "POST /predict HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'coroutine' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/fastapi/encoders.py", line 332, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/fastapi/applications.py", line 1138, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/fastapi/routing.py", line 121, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/fastapi/routing.py", line 107, in app
+    response = await f(request)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/fastapi/routing.py", line 448, in app
+    content = await serialize_response(
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/fastapi/routing.py", line 303, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/fastapi/encoders.py", line 288, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/fastapi/encoders.py", line 335, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'coroutine' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+^CINFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [29269]
+sys:1: RuntimeWarning: coroutine 'predict' was never awaited
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ nano inference.py 
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ rm -rf app.py 
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ ls
+__pycache__  api_server.pem  best.ckpt  inference.py  logs.txt  mapping.json  model.py  requirements.txt  venv
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ nano app.py
+(venv) [ec2-user@ip-172-31-28-215 Final_Deployment&Load_testing]$ python -m uvicorn app:app --host 0.0.0.0 --port 8000
+INFO:     Started server process [29532]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+/home/ec2-user/Final_Deployment&Load_testing/venv/lib64/python3.9/site-packages/torch/nn/functional.py:6041: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+INFO:     139.135.35.54:16280 - "POST /predict HTTP/1.1" 200 OK
+INFO:     139.135.35.54:16708 - "GET /health HTTP/1.1" 200 OK
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------- Local Machine Enpoints Testing ---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+valiant@DESKTOP-K59O4T5:/mnt/h/Semester-6/MLOps/Final_Deployment&Load_testing$ curl -X POST \
+  -F "image=@test.png" \
+  http://51.20.77.49:8000/predict
+Internal Server Error
+valiant@DESKTOP-K59O4T5:/mnt/h/Semester-6/MLOps/Final_Deployment&Load_testing$ curl -X POST   -F "image=@test.png"   http://51.20.77.49:8000/predict
+{"success":true,"prediction":"A plered and the sere are and withe he\nserered as as the she willl he she bere\nthe as he sere ad as as in the se as as\nand he whe serere as as asered ing as ingered\nas wing the the win the as as aser"}
+valiant@DESKTOP-K59O4T5:/mnt/h/Semester-6/MLOps/Final_Deployment&Load_testing$ curl -X POST    http://51.20.77.49:8000/health
+{"detail":"Method Not Allowed"}
+valiant@DESKTOP-K59O4T5:/mnt/h/Semester-6/MLOps/Final_Deployment&Load_testing$ curl -X GET    http://51.20.77.49:8000/health
+{"status":"healthy","roll_no":"BSAI23034"}
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------- Load Testing -------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------- requirements installed -----------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+valiant@DESKTOP-K59O4T5:/mnt/h/Semester-6/MLOps/Final_Deployment&Load_testing$ source venv/bin/activate
+(venv) valiant@DESKTOP-K59O4T5:/mnt/h/Semester-6/MLOps/Final_Deployment&Load_testing$ pip install requests locust pandas
+Requirement already satisfied: requests in ./venv/lib/python3.14/site-packages (2.34.2)
+Collecting locust
+  Using cached locust-2.44.0-py3-none-any.whl.metadata (10 kB)
+Collecting pandas
+  Using cached pandas-3.0.3-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+Requirement already satisfied: charset_normalizer<4,>=2 in ./venv/lib/python3.14/site-packages (from requests) (3.4.7)
+Requirement already satisfied: idna<4,>=2.5 in ./venv/lib/python3.14/site-packages (from requests) (3.16)
+Requirement already satisfied: urllib3<3,>=1.26 in ./venv/lib/python3.14/site-packages (from requests) (2.7.0)
+Requirement already satisfied: certifi>=2023.5.7 in ./venv/lib/python3.14/site-packages (from requests) (2026.5.20)
+Requirement already satisfied: configargparse>=1.7.1 in ./venv/lib/python3.14/site-packages (from locust) (1.7.5)
+Collecting flask-cors>=3.0.10 (from locust)
+  Using cached flask_cors-6.0.2-py3-none-any.whl.metadata (5.3 kB)
+Collecting flask-login>=0.6.3 (from locust)
+  Using cached Flask_Login-0.6.3-py3-none-any.whl.metadata (5.8 kB)
+Collecting flask>=2.0.0 (from locust)
+  Using cached flask-3.1.3-py3-none-any.whl.metadata (3.2 kB)
+Requirement already satisfied: gevent!=25.8.1,<26.0.0,>=24.10.1 in ./venv/lib/python3.14/site-packages (from locust) (25.9.1)
+Collecting geventhttpclient>=2.3.1 (from locust)
+  Using cached geventhttpclient-2.3.9-cp314-cp314-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (8.5 kB)
+Requirement already satisfied: msgpack>=1.0.0 in ./venv/lib/python3.14/site-packages (from locust) (1.1.2)
+Requirement already satisfied: psutil>=5.9.1 in ./venv/lib/python3.14/site-packages (from locust) (7.2.2)
+Requirement already satisfied: pytest<10,>=8.3.3 in ./venv/lib/python3.14/site-packages (from locust) (9.0.3)
+Collecting python-engineio>=4.12.2 (from locust)
+  Using cached python_engineio-4.13.2-py3-none-any.whl.metadata (2.3 kB)
+Collecting python-socketio>=5.13.0 (from python-socketio[client]>=5.13.0->locust)
+  Using cached python_socketio-5.16.2-py3-none-any.whl.metadata (3.3 kB)
+Requirement already satisfied: pyzmq>=25.0.0 in ./venv/lib/python3.14/site-packages (from locust) (27.1.0)
+Requirement already satisfied: werkzeug>=2.0.0 in ./venv/lib/python3.14/site-packages (from locust) (3.1.8)
+Requirement already satisfied: greenlet>=3.2.2 in ./venv/lib/python3.14/site-packages (from gevent!=25.8.1,<26.0.0,>=24.10.1->locust) (3.5.1)
+Requirement already satisfied: zope.event in ./venv/lib/python3.14/site-packages (from gevent!=25.8.1,<26.0.0,>=24.10.1->locust) (6.2)
+Requirement already satisfied: zope.interface in ./venv/lib/python3.14/site-packages (from gevent!=25.8.1,<26.0.0,>=24.10.1->locust) (8.4)
+Requirement already satisfied: iniconfig>=1.0.1 in ./venv/lib/python3.14/site-packages (from pytest<10,>=8.3.3->locust) (2.3.0)
+Requirement already satisfied: packaging>=22 in ./venv/lib/python3.14/site-packages (from pytest<10,>=8.3.3->locust) (26.2)
+Requirement already satisfied: pluggy<2,>=1.5 in ./venv/lib/python3.14/site-packages (from pytest<10,>=8.3.3->locust) (1.6.0)
+Requirement already satisfied: pygments>=2.7.2 in ./venv/lib/python3.14/site-packages (from pytest<10,>=8.3.3->locust) (2.20.0)
+Requirement already satisfied: numpy>=2.3.3 in ./venv/lib/python3.14/site-packages (from pandas) (2.4.6)
+Requirement already satisfied: python-dateutil>=2.8.2 in ./venv/lib/python3.14/site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: blinker>=1.9.0 in ./venv/lib/python3.14/site-packages (from flask>=2.0.0->locust) (1.9.0)
+Requirement already satisfied: click>=8.1.3 in ./venv/lib/python3.14/site-packages (from flask>=2.0.0->locust) (8.4.1)
+Requirement already satisfied: itsdangerous>=2.2.0 in ./venv/lib/python3.14/site-packages (from flask>=2.0.0->locust) (2.2.0)
+Requirement already satisfied: jinja2>=3.1.2 in ./venv/lib/python3.14/site-packages (from flask>=2.0.0->locust) (3.1.6)
+Requirement already satisfied: markupsafe>=2.1.1 in ./venv/lib/python3.14/site-packages (from flask>=2.0.0->locust) (3.0.3)
+Requirement already satisfied: brotli in ./venv/lib/python3.14/site-packages (from geventhttpclient>=2.3.1->locust) (1.2.0)
+Requirement already satisfied: six>=1.5 in ./venv/lib/python3.14/site-packages (from python-dateutil>=2.8.2->pandas) (1.17.0)
+Collecting simple-websocket>=0.10.0 (from python-engineio>=4.12.2->locust)
+  Using cached simple_websocket-1.1.0-py3-none-any.whl.metadata (1.5 kB)
+Requirement already satisfied: bidict>=0.21.0 in ./venv/lib/python3.14/site-packages (from python-socketio>=5.13.0->python-socketio[client]>=5.13.0->locust) (0.23.1)
+Requirement already satisfied: websocket-client>=0.54.0 in ./venv/lib/python3.14/site-packages (from python-socketio[client]>=5.13.0->locust) (1.9.0)
+Requirement already satisfied: wsproto in ./venv/lib/python3.14/site-packages (from simple-websocket>=0.10.0->python-engineio>=4.12.2->locust) (1.3.2)
+Requirement already satisfied: h11<1,>=0.16.0 in ./venv/lib/python3.14/site-packages (from wsproto->simple-websocket>=0.10.0->python-engineio>=4.12.2->locust) (0.16.0)
+Using cached locust-2.44.0-py3-none-any.whl (1.5 MB)
+Using cached pandas-3.0.3-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (10.9 MB)
+Using cached flask-3.1.3-py3-none-any.whl (103 kB)
+Using cached flask_cors-6.0.2-py3-none-any.whl (13 kB)
+Using cached Flask_Login-0.6.3-py3-none-any.whl (17 kB)
+Using cached geventhttpclient-2.3.9-cp314-cp314-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (115 kB)
+Using cached python_engineio-4.13.2-py3-none-any.whl (59 kB)
+Using cached python_socketio-5.16.2-py3-none-any.whl (82 kB)
+Using cached simple_websocket-1.1.0-py3-none-any.whl (13 kB)
+Installing collected packages: simple-websocket, pandas, geventhttpclient, flask, python-engineio, flask-login, flask-cors, python-socketio, locust
+Successfully installed flask-3.1.3 flask-cors-6.0.2 flask-login-0.6.3 geventhttpclient-2.3.9 locust-2.44.0 pandas-3.0.3 python-engineio-4.13.2 python-socketio-5.16.2 simple-websocket-1.1.0
+
+>>>>>>>>>>>>>>>>>>>==============================================<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+(venv) valiant@DESKTOP-K59O4T5:/mnt/h/Semester-6/MLOps/Final_Deployment&Load_testing$ locust --version
+locust 2.44.0 from /mnt/h/Semester-6/MLOps/Final_Deployment&Load_testing/venv/lib/python3.14/site-packages/locust (Python 3.14.4)
+Exception ignored on calling weakref callback <function _removeHandlerRef at 0x75b4b3faa820>:
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/logging/__init__.py", line 893, in _removeHandlerRef
+  File "/usr/lib/python3.14/threading.py", line 207, in acquire
+  File "/mnt/h/Semester-6/MLOps/Final_Deployment&Load_testing/venv/lib/python3.14/site-packages/gevent/thread.py", line 81, in get_ident
+RuntimeError: greenlet is being finalized
+(venv) valiant@DESKTOP-K59O4T5:/mnt/h/Semester-6/MLOps/Final_Deployment&Load_testing$ python --version
+Python 3.14.4
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------- API Endpoints Testing (API_test.py) --------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+(venv) valiant@DESKTOP-K59O4T5:/mnt/h/Semester-6/MLOps/Final_Deployment&Load_testing$ python API_test.py
+
+=== HEALTH ENDPOINT ===
+Status Code: 200
+Response: {"status":"healthy","roll_no":"BSAI23034"}
+
+=== PREDICT ENDPOINT ===
+Status Code: 200
+Response: {"success":true,"prediction":"A plered and the sere are and withe he\nserered as as the she willl he she bere\nthe as he sere ad as as in the se as as\nand he whe serere as as asered ing as ingered\nas wing the the win the as as aser"}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------- User Load testing (Benchmark.py)(10 , 25 and 50 users) ------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+[2026-05-24 19:12:44,242] DESKTOP-K59O4T5/INFO/locust.main: --run-time limit reached, shutting down
+Type     Name                                                                         # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+--------|---------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+GET      /predict/health                                                                4243 4243(100.00%) |    214     166   30051    180 |   14.80       14.80
+POST     /predict/predict                                                               4262 4262(100.00%) |    216     168   33449    180 |   14.30       14.30
+--------|---------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+         Aggregated                                                                     8505 8505(100.00%) |    215     166   33449    180 |   29.10       29.10
+
+[2026-05-24 19:12:47,566] DESKTOP-K59O4T5/INFO/locust.main: writing html report to file: 50users.html
+[2026-05-24 19:12:47,584] DESKTOP-K59O4T5/INFO/locust.main: Shutting down (exit code 1)
+Type     Name                                                                         # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+--------|---------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+GET      /predict/health                                                                4245 4245(100.00%) |    216     166   30051    180 |   14.18       14.18
+POST     /predict/predict                                                               4262 4262(100.00%) |    216     168   33449    180 |   14.24       14.24
+--------|---------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+         Aggregated                                                                     8507 8507(100.00%) |    216     166   33449    180 |   28.42       28.42
+
+Response time percentiles (approximated)
+Type     Name                                                                                 50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100% # reqs
+--------|-------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+GET      /predict/health                                                                      180    180    190    190    200    220    330    410   5800  30000  30000   4245
+POST     /predict/predict                                                                     180    190    190    190    200    230    360    540   1000  33000  33000   4262
+--------|-------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+         Aggregated                                                                           180    190    190    190    200    230    350    500   5300  33000  33000   8507
+
+Error report
+# occurrences      Error                                                                                               
+------------------|--------------------------------------------------------------------------------------------------------------------------------------------
+4244               GET /predict/health: HTTPError('404 Client Error: Not Found for url: /predict/health')              
+4262               POST /predict/predict: HTTPError('404 Client Error: Not Found for url: /predict/predict')           
+1                  GET /predict/health: RemoteDisconnected('Remote end closed connection without response')            
+------------------|--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+All benchmarks completed.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------
