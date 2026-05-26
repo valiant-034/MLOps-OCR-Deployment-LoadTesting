@@ -1,0 +1,166 @@
+=== TEST CONFIGURATION ===
+Users: 2
+Spawn Rate: 1
+Duration Seconds: 60
+
+=== TARGET SYSTEM ===
+Endpoint: http://51.20.77.49:8000/predict
+Method: POST
+
+=== REQUEST PAYLOAD ===
+{
+  "image": "test.png"
+}
+
+=== LOCUST RESULTS ===
+Total Requests: 10
+Total Failures: 0
+
+Average Response Time ms: 7476.25
+Median Response Time ms: 5500.00
+95th Percentile ms: 20000.00
+
+Requests Per Second: 0.19
+
+=== STATUS CODE DISTRIBUTION ===
+200: 10
+400: 0
+500: 0
+
+=== FAILURE ANALYSIS ===
+No failures observed during testing. All requests completed successfully.
+
+=== BOTTLENECK ANALYSIS ===
+High OCR inference latency indicates CPU saturation and model execution bottleneck under heavy load.
+
+=== FINAL CONCLUSION ===
+MODERATELY STABLE
+
+==================================================================================================================================================
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+==================================================================================================================================================
+
+=== TEST CONFIGURATION ===
+Users: 5
+Spawn Rate: 1
+Duration Seconds: 120
+
+=== TARGET SYSTEM ===
+Endpoint: http://51.20.77.49:8000/predict
+Method: POST
+
+=== REQUEST PAYLOAD ===
+{
+  "image": "test.png"
+}
+
+=== LOCUST RESULTS ===
+Total Requests: 22
+Total Failures: 15
+
+Average Response Time ms: 19360.34
+Median Response Time ms: 19000.00
+95th Percentile ms: 31000.00
+
+Requests Per Second: 0.20
+
+=== STATUS CODE DISTRIBUTION ===
+200: 7
+400: 0
+500: 15
+
+=== FAILURE ANALYSIS ===
+Significant failures observed due to server overload during concurrent OCR requests.
+
+=== BOTTLENECK ANALYSIS ===
+High OCR inference latency indicates CPU saturation and model execution bottleneck under heavy load.
+
+=== FINAL CONCLUSION ===
+UNSTABLE
+
+
+==================================================================================================================================================
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+==================================================================================================================================================
+
+
+=== TEST CONFIGURATION ===
+Users: 5
+Spawn Rate: 2
+Duration Seconds: 60
+
+=== TARGET SYSTEM ===
+Endpoint: http://51.20.77.49:8000/predict
+Method: POST
+
+=== REQUEST PAYLOAD ===
+{
+  "image": "test.png"
+}
+
+=== LOCUST RESULTS ===
+Total Requests: 10
+Total Failures: 6
+
+Average Response Time ms: 16632.12
+Median Response Time ms: 11000.00
+95th Percentile ms: 31000.00
+
+Requests Per Second: 0.22
+
+=== STATUS CODE DISTRIBUTION ===
+200: 4
+400: 0
+500: 6
+
+=== FAILURE ANALYSIS ===
+Significant failures observed due to server overload during concurrent OCR requests.
+
+=== BOTTLENECK ANALYSIS ===
+High OCR inference latency indicates CPU saturation and model execution bottleneck under heavy load.
+
+=== FINAL CONCLUSION ===
+UNSTABLE
+
+==================================================================================================================================================
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+==================================================================================================================================================
+
+=== TEST CONFIGURATION ===
+Users: 10
+Spawn Rate: 1
+Duration Seconds: 120
+
+=== TARGET SYSTEM ===
+Endpoint: http://51.20.77.49:8000/predict
+Method: POST
+
+=== REQUEST PAYLOAD ===
+{
+  "image": "test.png"
+}
+
+=== LOCUST RESULTS ===
+Total Requests: 48
+Total Failures: 48
+
+Average Response Time ms: 17803.97
+Median Response Time ms: 10171.85
+95th Percentile ms: 31000.00
+
+Requests Per Second: 0.42
+
+=== STATUS CODE DISTRIBUTION ===
+200: 0
+400: 0
+500: 48
+
+=== FAILURE ANALYSIS ===
+Significant failures observed due to server overload during concurrent OCR requests.
+
+=== BOTTLENECK ANALYSIS ===
+High OCR inference latency indicates CPU saturation and model execution bottleneck under heavy load.
+
+=== FINAL CONCLUSION ===
+UNSTABLE
+
